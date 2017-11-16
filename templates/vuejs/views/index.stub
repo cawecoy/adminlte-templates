@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('$LAYOUT_PREFIX$layouts.app')
 
 @section('content')
     <div id="crud-app">
