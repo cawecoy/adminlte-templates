@@ -12,6 +12,10 @@
                 <div class="row" style="padding-left: 20px">
                     @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
                     <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="btn btn-default">{!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.back') !!}</a>
+                    <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$) !!}" class="btn btn-default">{!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit') !!}</a>
+                    {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete']); !!}
+                        {!! Form::button(__('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete'), ['type' => 'submit','class' => 'btn btn-danger','title' => __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete'),'onclick' => "return confirm('".__('admin/users.areyousure')."')"]); !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
