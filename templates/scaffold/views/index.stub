@@ -4,7 +4,9 @@
     <section class="content-header">
         <h1 class="pull-left">{{ Breadcrumbs::render('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$') }}</h1>
         <h1 class="pull-right">
+            @can('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create')
            <a class="btn btn-primary pull-right" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">{!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.addnew') !!}</a>
+           @endcan
         </h1>
     </section>
     <div class="content">
