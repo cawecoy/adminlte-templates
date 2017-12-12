@@ -1,3 +1,4 @@
+
 @can('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index')
 <li class="{{ Request::is('$ROUTE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$*') ? 'active' : '' }}">
     <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}"><i class="fa fa-edit"></i><span>{!! trans_choice('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.model.name', 2) !!}</span></a>

@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            {{ Breadcrumbs::render('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.create') }}
+            {{ Breadcrumbs::render('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') }}
         </h1>
     </section>
     <div class="content">
