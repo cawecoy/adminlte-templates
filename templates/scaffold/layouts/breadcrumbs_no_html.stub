@@ -1,8 +1,9 @@
 @if (count($breadcrumbs))
     @foreach ($breadcrumbs as $breadcrumb)
+        @if($loop->last)
         {{ $breadcrumb->title }}
-        @if(!$loop->last)
-         > 
+        @else
+        {{ $breadcrumb->title }} > 
         @endif
     @endforeach
 @endif
