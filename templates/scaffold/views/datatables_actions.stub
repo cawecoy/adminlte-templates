@@ -1,4 +1,4 @@
-{!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$PRIMARY_KEY_NAME$], 'method' => 'delete']) !!}
+{!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$PRIMARY_KEY_NAME$], 'method' => 'delete', 'onSubmit' => 'javascript: formSubmit();']) !!}
 <div class='btn-group'>
     @can('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show')
     <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', $$PRIMARY_KEY_NAME$) }}" title="{{ __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show') }}" class='btn btn-default btn-xs'>

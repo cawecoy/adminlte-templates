@@ -23,6 +23,10 @@
    </div>
 @endsection
 
+@section('scripts')
+<script src="{{ asset('vendor/laravel-generator/form-submission.js') }}"></script>
+@endsection
+
 @section('meta-tags')
 <title>{{ Breadcrumbs::view('partials.breadcrumbs_no_html', '$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', $$MODEL_NAME_CAMEL$) }} | {{ config('app.name') }}</title>
 @endsection

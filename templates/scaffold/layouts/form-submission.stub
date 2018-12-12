@@ -1,0 +1,7 @@
+function formSubmit(){
+    $(':submit').attr('disabled', 'disabled');
+}
+$('form').submit(function(){
+    $(':submit').attr('disabled', 'disabled');
+    return true;
+});

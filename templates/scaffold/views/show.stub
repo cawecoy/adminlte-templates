@@ -17,7 +17,7 @@
                     <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$) !!}" class="btn btn-default">{!! __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit') !!}</a>
                     @endcan
                     @can('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy')
-                    {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete']); !!}
+                    {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'delete', 'onSubmit' => 'javascript: formSubmit();']); !!}
                         {!! Form::button(__('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete'), ['type' => 'submit','class' => 'btn btn-danger','title' => __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.delete'),'onclick' => "return confirm('".__('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.areyousure')."')"]); !!}
                     {!! Form::close() !!}
                     @endcan
@@ -25,6 +25,10 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('vendor/laravel-generator/form-submission.js') }}"></script>
 @endsection
 
 @section('meta-tags')
