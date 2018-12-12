@@ -1,0 +1,8 @@
+@if (count($breadcrumbs))
+    @foreach ($breadcrumbs as $breadcrumb)
+        {{ $breadcrumb->title }}
+        @if(!$loop->last)
+         > 
+        @endif
+    @endforeach
+@endif

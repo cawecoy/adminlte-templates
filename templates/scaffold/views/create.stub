@@ -22,3 +22,7 @@
         </div>
     </div>
 @endsection
+
+@section('meta-tags')
+<title>{{ Breadcrumbs::view('partials.breadcrumbs_no_html', '$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') }} | {{ config('app.name') }}</title>
+@endsection
