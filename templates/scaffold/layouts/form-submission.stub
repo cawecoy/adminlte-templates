@@ -1,7 +1,20 @@
 function formSubmit(){
     $(':submit').attr('disabled', 'disabled');
+    $('.btn').attr('disabled', 'disabled');
+    $('.btn').removeAttr('href');
 }
 $('form').submit(function(){
     $(':submit').attr('disabled', 'disabled');
+    $('.btn').attr('disabled', 'disabled');
+    $('.btn').removeAttr('href');
     return true;
+});
+$('.form-delete-confirmation').click(function(){
+    if(confirm($('meta[name="delete-confirmation"]').attr('content'))){
+        $formDelete =  '<form method="POST" action="'+$(this).attr('data-url')+'" accept-charset="UTF-8" onsubmit="javascript: formSubmit();" class="hidden">';
+        $formDelete +=     '<input name="_method" type="hidden" value="DELETE">';
+        $formDelete +=     '<input type="hidden" name="_token" value="'+$('meta[name="csrf-token"]').attr('content')+'">';
+        $formDelete += '</form>';
+        $($formDelete).appendTo('body').submit();
+    }
 });
