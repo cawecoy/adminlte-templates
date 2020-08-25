@@ -1,7 +1,16 @@
 <!-- 'bootstrap / Toggle Switch $FIELD_NAME_TITLE$ Field' -->
-<div class="form-group col-sm-6">
+<div class="form-group{{ $errors->has('$FIELD_NAME$') ? ' has-error' : '' }} col-sm-6">
     {!! Form::label('$FIELD_NAME$', __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.field.$FIELD_NAME$').':') !!}
     <label class="checkbox-inline">
-   {!! Form::checkbox('$FIELD_NAME$', 1, true,  ['data-toggle' => 'toggle']) !!}
+        {!! Form::checkbox('$FIELD_NAME$', 1, true,  ['data-toggle' => 'toggle']) !!}
     </label>
+    @if ($errors->has('$FIELD_NAME$'))
+        <span class="help-block">
+            @foreach ($errors->get('$FIELD_NAME$') as $message)
+            <div>
+                <strong>{{ $message }}</strong>
+            </div>
+            @endforeach
+        </span>
+    @endif
 </div>

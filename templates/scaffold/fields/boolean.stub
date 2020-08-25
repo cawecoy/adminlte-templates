@@ -1,8 +1,17 @@
 <!-- 'Boolean $FIELD_NAME_TITLE$ Field' checked by default -->
-<div class="form-group col-sm-6">
+<div class="form-group{{ $errors->has('$FIELD_NAME$') ? ' has-error' : '' }} col-sm-6">
     {!! Form::label('$FIELD_NAME$', __('$LANGUAGE_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.field.$FIELD_NAME$').':') !!}
     <label class="checkbox-inline">
-   {!! Form::checkbox('$FIELD_NAME$', 1, true) !!}
-   <!-- remove {, true} to make it unchecked by default -->
+        {!! Form::checkbox('$FIELD_NAME$', 1, true) !!}
+        <!-- remove {, true} to make it unchecked by default -->
     </label>
+    @if ($errors->has('$FIELD_NAME$'))
+        <span class="help-block">
+            @foreach ($errors->get('$FIELD_NAME$') as $message)
+            <div>
+                <strong>{{ $message }}</strong>
+            </div>
+            @endforeach
+        </span>
+    @endif
 </div>
