@@ -1,12 +1,17 @@
+function pageShown(event) {
+    $(':submit').removeAttr('disabled');
+    $('.btn').removeAttr('disabled');
+    $('a.btn').unbind('click');
+}
 function formSubmit(){
     $(':submit').attr('disabled', 'disabled');
     $('.btn').attr('disabled', 'disabled');
-    $('.btn').removeAttr('href');
+    $('a.btn').on("click", function (e) {
+        e.preventDefault();
+    });
 }
 $('form').submit(function(){
-    $(':submit').attr('disabled', 'disabled');
-    $('.btn').attr('disabled', 'disabled');
-    $('.btn').removeAttr('href');
+    formSubmit();
     return true;
 });
 $('.form-delete-confirmation').click(function(){
@@ -18,3 +23,4 @@ $('.form-delete-confirmation').click(function(){
         $($formDelete).appendTo('body').submit();
     }
 });
+window.addEventListener("pageshow", pageShown, false);
